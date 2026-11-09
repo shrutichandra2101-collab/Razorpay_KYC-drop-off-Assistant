@@ -1,7 +1,7 @@
 {
   "_note": "Prototype defaults. Every threshold here is an ASSUMPTION introduced by this application, not official Razorpay policy. Override from the Settings page (saved to state/settings_override.json) - this file is never modified by the app.",
   "workbook": {
-    "path": "",
+    "path": "PS_3_Razorpay_KYC.xlsx",
     "search_glob": "Buildathon_Student_Data_Pack*.xlsx",
     "applications_sheet": "P3_Applications",
     "catalog_sheet": "P3_RejectionCatalog"

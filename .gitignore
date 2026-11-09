@@ -10,3 +10,8 @@ Razorpay_Campus_AI_Buildathon_Student_Brief.pdf
 data/
 .claude/
 .DS_Store
+
+# video build intermediates
+video/build/
+video/out/
+~$*

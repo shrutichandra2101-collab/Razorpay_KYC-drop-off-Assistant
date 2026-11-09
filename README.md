@@ -25,7 +25,7 @@ cp .env.example .env            # optional: add ANTHROPIC_API_KEY to enable the 
 streamlit run app.py            # opens http://localhost:8501
 ```
 
-The workbook is found automatically: any `Buildathon_Student_Data_Pack*.xlsx` in this folder or in `data/`. You can also set `WORKBOOK_PATH` in `.env`, or upload a copy on the Settings page. The original file is opened read-only and never modified.
+The workbook `PS_3_Razorpay_KYC.xlsx` (the two sheets used: `P3_Applications`, `P3_RejectionCatalog`) is included and loaded by default, so the app opens straight onto the data with no upload step. You can still load another copy from Quality & settings → Data & audit log, or set `WORKBOOK_PATH` in `.env`. You can also set `WORKBOOK_PATH` in `.env`, or upload a copy on the Settings page. The original file is opened read-only and never modified.
 
 From the command line, without the UI:
 
