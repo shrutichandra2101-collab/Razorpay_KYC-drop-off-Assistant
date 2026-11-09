@@ -106,6 +106,46 @@ html, body, [class*="css"], .stMarkdown, button, input, textarea { font-family: 
 .small { font-size:12px; color:#6b7895; }
 .case-head { font-size:24px; font-weight:700; color:#0B1B3F; }
 .case-sub { color:#52607a; font-size:14px; margin: 2px 0 6px 0; }
+
+/* ---------- visual polish (looks only) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0');
+.msr { font-family:'Material Symbols Rounded'; font-weight:normal; font-style:normal; font-size:22px; line-height:1;
+  display:inline-block; -webkit-font-feature-settings:'liga'; font-feature-settings:'liga'; }
+@keyframes fadeUp { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform:none; } }
+@keyframes pulse { 0% { box-shadow:0 0 0 0 rgba(52,211,153,.6);} 70% { box-shadow:0 0 0 8px rgba(52,211,153,0);} 100% { box-shadow:0 0 0 0 rgba(52,211,153,0);} }
+.hero, .big, .summary, .callout, .task-card, .case-head, .hello { animation: fadeUp .5s cubic-bezier(.2,.7,.2,1) both; }
+.hero { position:relative; overflow:hidden; color:#fff; border-radius:20px; padding:26px 30px; margin-bottom:16px;
+  background: radial-gradient(circle at 88% 10%, rgba(120,180,255,.45), transparent 38%),
+              radial-gradient(circle at 10% 120%, rgba(47,107,255,.55), transparent 45%),
+              linear-gradient(135deg,#0B1B3F 0%,#14306f 55%,#2F6BFF 100%);
+  box-shadow: 0 14px 34px rgba(11,27,63,.22); display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+.hero-kicker { font-size:12px; letter-spacing:.12em; text-transform:uppercase; opacity:.75; font-weight:600; }
+.hero-title { font-size:30px; font-weight:700; margin-top:4px; line-height:1.15; }
+.hero-sub { font-size:15px; opacity:.85; margin-top:6px; max-width:520px; }
+.hero-stats { display:flex; gap:12px; flex-wrap:wrap; }
+.hero-stat { background: rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18); backdrop-filter: blur(6px);
+  border-radius:14px; padding:12px 16px; min-width:150px; transition: transform .2s ease, background .2s ease; }
+.hero-stat:hover { transform: translateY(-3px); background: rgba(255,255,255,.16); }
+.hero-stat .v { font-size:26px; font-weight:700; font-variant-numeric: tabular-nums; }
+.hero-stat .l { font-size:12px; opacity:.8; margin-top:2px; max-width:170px; }
+.task-ic { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
+.task-card { display:flex; flex-direction:column; }
+.task-top { display:flex; align-items:center; justify-content:space-between; }
+[data-testid="stVerticalBlockBorderWrapper"], div[data-testid="stVerticalBlock"][style*="border"] {
+  border-radius:16px !important; transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease; background:#fff; }
+[data-testid="stVerticalBlockBorderWrapper"]:hover { box-shadow: 0 10px 26px rgba(11,27,63,.09); transform: translateY(-2px); border-color:#cfd9ef; }
+.stButton button, .stDownloadButton button, .stFormSubmitButton button { border-radius:10px; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+.stButton button:hover, .stFormSubmitButton button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(47,107,255,.18); }
+button[kind="primary"], button[kind="primaryFormSubmit"] { background: linear-gradient(135deg,#2F6BFF,#5A8DFF) !important; border:0 !important; }
+.big { transition: transform .2s ease, box-shadow .2s ease; border-top:3px solid #2F6BFF; }
+.big:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(11,27,63,.08); }
+.summary { border-left:4px solid #2F6BFF; box-shadow: 0 6px 18px rgba(11,27,63,.05); }
+.hello { background: linear-gradient(90deg,#0B1B3F,#2F6BFF); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.live-dot { width:8px; height:8px; border-radius:50%; background:#34d399; display:inline-block; margin-right:6px; animation: pulse 2s infinite; vertical-align:middle; }
+.off-dot { width:8px; height:8px; border-radius:50%; background:#9aa5b8; display:inline-block; margin-right:6px; vertical-align:middle; }
+[data-testid="stSidebarNav"] a { border-radius:8px; transition: background .15s ease; }
+[data-testid="stSidebarNav"] a:hover { background: rgba(255,255,255,.08); }
+[data-testid="stDataFrame"] { border-radius:12px; overflow:hidden; box-shadow: 0 4px 14px rgba(11,27,63,.05); }
 </style>
 """, unsafe_allow_html=True)
 
@@ -338,9 +378,15 @@ def answer_card(cur, store, where: str):
 def page_home():
     ds, res, settings, store = get_results()
     s, df = res.summary, res.df
-    st.markdown('<div class="hello">What needs your attention today?</div>'
-                f'<div class="sub">{s["non_activated"]} merchants are stuck in onboarding. Pick a task to start - '
-                'everything else stays out of the way until you ask for it.</div>', unsafe_allow_html=True)
+    stats = [(s["non_activated"], f"stuck applications (of {s['total']})"),
+             (s["recoverable"], "can be recovered by the merchant fixing something"),
+             (fmt_tpv(s["tpv_recoverable_lakh"]), "expected monthly TPV in recoverable cases · declared, not actual")]
+    st.markdown('<div class="hero"><div><div class="hero-kicker">Onboarding recovery · today</div>'
+                '<div class="hero-title">What needs your attention today?</div>'
+                f'<div class="hero-sub">{s["non_activated"]} merchants are stuck in onboarding. Pick a task to start - '
+                'everything else stays out of the way until you ask for it.</div></div><div class="hero-stats">'
+                + "".join(f'<div class="hero-stat"><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in stats)
+                + '</div></div>', unsafe_allow_html=True)
     ask_box(res, settings, store, "home")
     st.write("")
 
@@ -352,21 +398,19 @@ def page_home():
         "closing": (lambda c: f"{int((c['recovery_decision'] == 'Close').sum())} restricted closures · "
                               f"{int((c['recovery_decision'] == 'Route to Compliance').sum())} compliance hand-offs.")(view_rows(df, "closing")),
     }
+    look = {"review": ("fact_check", "#b7791f", "#FFF4DD"), "ready": ("send", "#2F6BFF", "#E8F0FF"),
+            "struggling": ("support_agent", "#c0392b", "#FDECEA"), "closing": ("block", "#475569", "#EEF1F5")}
     cols = st.columns(4)
     for col, v in zip(cols, ["review", "ready", "struggling", "closing"]):
+        icon, fg, bg = look[v]
         with col.container(border=True):
-            st.markdown(f'<div class="task-count">{counts[v]}</div><div class="task-title">{VIEWS[v]["label"]}</div>'
-                        f'<div class="task-desc">{desc[v]}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="task-card"><div class="task-top"><div class="task-ic" style="background:{bg};color:{fg}">'
+                        f'<span class="msr">{icon}</span></div><div class="task-count" style="color:{fg}">{counts[v]}</div></div>'
+                        f'<div class="task-title">{VIEWS[v]["label"]}</div><div class="task-desc">{desc[v]}</div></div>',
+                        unsafe_allow_html=True)
             if st.button("Start", key=f"home_{v}", icon=":material/arrow_forward:", use_container_width=True,
                          type="primary" if v == "review" and counts[v] else "secondary", disabled=counts[v] == 0):
                 go_view(v)
-
-    st.write("")
-    st.markdown("##### At a glance")
-    c = st.columns(3)
-    big_number(c[0], s["non_activated"], f"stuck applications (of {s['total']})")
-    big_number(c[1], s["recoverable"], "can be recovered by the merchant fixing something")
-    big_number(c[2], fmt_tpv(s["tpv_recoverable_lakh"]), "expected monthly TPV in recoverable cases · declared, not actual revenue")
 
     st.write("")
     st.markdown("##### Want to know more?")
@@ -1094,5 +1138,6 @@ with st.sidebar:
         st.session_state["actor"] = "ops.reviewer"
     st.text_input("Signed in as", key="actor")
     _llm = LLMClient(_settings["llm"])
-    st.caption(("● AI assist on" if _llm.available else "○ AI assist off (rules only)") + " · nothing is ever sent")
+    st.markdown(("<span class='live-dot'></span>AI assist on" if _llm.available else "<span class='off-dot'></span>AI assist off (rules only)")
+                + "<span class='small' style='opacity:.7'> · nothing is ever sent</span>", unsafe_allow_html=True)
 nav.run()
