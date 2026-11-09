@@ -1,0 +1,63 @@
+{
+  "_note": "Prototype defaults. Every threshold here is an ASSUMPTION introduced by this application, not official Razorpay policy. Override from the Settings page (saved to state/settings_override.json) - this file is never modified by the app.",
+  "workbook": {
+    "path": "",
+    "search_glob": "Buildathon_Student_Data_Pack*.xlsx",
+    "applications_sheet": "P3_Applications",
+    "catalog_sheet": "P3_RejectionCatalog"
+  },
+  "diagnosis": {
+    "auto_accept_confidence": 0.75,
+    "abandonment_min_inactive_days": 3,
+    "always_human_confirm_inferred_codes": ["R10", "R12"],
+    "stage_consistency_bonus": 0.08,
+    "stage_mismatch_penalty": 0.15,
+    "inferred_confidence_cap": 0.97
+  },
+  "friction": {
+    "attempts_medium": 2,
+    "attempts_high": 3,
+    "support_medium": 1,
+    "support_high": 2,
+    "inactive_medium_days": 14,
+    "inactive_high_days": 21,
+    "inactive_severe_days": 30,
+    "level_high_min_points": 5,
+    "level_medium_min_points": 3
+  },
+  "priority": {
+    "weights": {
+      "tpv": 0.35,
+      "inactivity": 0.20,
+      "friction": 0.15,
+      "attempts": 0.075,
+      "support": 0.075,
+      "confidence": 0.10,
+      "quick_fix": 0.05
+    },
+    "inactivity_cap_days": 30,
+    "high_min_score": 60,
+    "medium_min_score": 42,
+    "high_friction_floor": "Medium"
+  },
+  "followup": {
+    "standard_offsets_days": {"initial": 0, "follow_up_1": 3, "follow_up_2": 7, "final": 14},
+    "high_friction_offsets_days": {"initial": 0, "follow_up_1": 2, "follow_up_2": 5, "final": 10},
+    "max_automated_messages": 4,
+    "min_gap_days": 2,
+    "send_window": "10:00-19:00 IST (assumed courtesy window)"
+  },
+  "messaging": {
+    "resume_link_placeholder": "[RESUME_LINK]",
+    "email_placeholder": "[MERCHANT_EMAIL - not in dataset]",
+    "default_alternative_channel": "Email",
+    "secondary_alternative_channel": "In-app notification"
+  },
+  "llm": {
+    "enabled": true,
+    "model": "claude-sonnet-5-5",
+    "effort": "low",
+    "max_tokens": 4000,
+    "use_server_fallbacks": true
+  }
+}

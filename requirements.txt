@@ -1,0 +1,7 @@
+pandas==2.3.3
+openpyxl==3.1.5
+streamlit==1.50.0
+plotly==7.1.0
+anthropic==0.125.0
+python-dotenv==1.2.1
+pytest==8.4.2

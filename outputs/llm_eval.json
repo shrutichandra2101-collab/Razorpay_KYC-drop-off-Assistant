@@ -1,0 +1,403 @@
+{
+  "generated_at": "2026-11-09 11:44 UTC",
+  "model": "claude-sonnet-5-5",
+  "effort": "low",
+  "blank_code": {
+    "correct": 4,
+    "total": 4,
+    "rows": [
+      {
+        "application_id": "A3022",
+        "manual_label": "R05",
+        "llm": "R05",
+        "confidence": 0.93,
+        "evidence_verbatim": true,
+        "passed": true,
+        "error": null
+      },
+      {
+        "application_id": "A3028",
+        "manual_label": "R01",
+        "llm": "R01",
+        "confidence": 0.93,
+        "evidence_verbatim": true,
+        "passed": true,
+        "error": null
+      },
+      {
+        "application_id": "A3051",
+        "manual_label": "R10",
+        "llm": "R10",
+        "confidence": 0.72,
+        "evidence_verbatim": true,
+        "passed": true,
+        "error": null
+      },
+      {
+        "application_id": "A3081",
+        "manual_label": "R09",
+        "llm": "R09",
+        "confidence": 0.8,
+        "evidence_verbatim": true,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  "paraphrases": {
+    "correct": 26,
+    "total": 26,
+    "lexicon_correct": 22,
+    "rows": [
+      {
+        "text": "Name on PAN is not same as the firm name",
+        "expected": "R01",
+        "llm": "R01",
+        "llm_confidence": 0.95,
+        "lexicon": "R01",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "PAN holder name mismatch with entity",
+        "expected": "R01",
+        "llm": "R01",
+        "llm_confidence": 0.93,
+        "lexicon": "R01",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "GSTIN status cancelled on portal",
+        "expected": "R02",
+        "llm": "R02",
+        "llm_confidence": 0.93,
+        "lexicon": "R02",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "GST certificate belongs to another legal entity",
+        "expected": "R02",
+        "llm": "R02",
+        "llm_confidence": 0.93,
+        "lexicon": "R02",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Cheque shows a different account holder name",
+        "expected": "R03",
+        "llm": "R03",
+        "llm_confidence": 0.88,
+        "lexicon": "R03",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Beneficiary name in bank does not match business",
+        "expected": "R03",
+        "llm": "R03",
+        "llm_confidence": 0.9,
+        "lexicon": "R03",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Penny drop failed, please recheck IFSC",
+        "expected": "R04",
+        "llm": "R04",
+        "llm_confidence": 0.95,
+        "lexicon": "R04",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Account number galat hai, test credit fail",
+        "expected": "R04",
+        "llm": "R04",
+        "llm_confidence": 0.96,
+        "lexicon": "R04",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Uploaded PDF is password protected",
+        "expected": "R05",
+        "llm": "R05",
+        "llm_confidence": 0.95,
+        "lexicon": "R05",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Image is blurry, upload again",
+        "expected": "R05",
+        "llm": "R05",
+        "llm_confidence": 0.95,
+        "lexicon": "R05",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Refund policy and contact us page not found on site",
+        "expected": "R06",
+        "llm": "R06",
+        "llm_confidence": 0.95,
+        "lexicon": "R06",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Terms and privacy pages absent from app",
+        "expected": "R06",
+        "llm": "R06",
+        "llm_confidence": 0.93,
+        "lexicon": "R06",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Website under maintenance, unable to review",
+        "expected": "R07",
+        "llm": "R07",
+        "llm_confidence": 0.9,
+        "lexicon": "R07",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Products and prices visible only after login",
+        "expected": "R07",
+        "llm": "R07",
+        "llm_confidence": 0.9,
+        "lexicon": "R07",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Utility bill older than 3 months",
+        "expected": "R08",
+        "llm": "R08",
+        "llm_confidence": 0.93,
+        "lexicon": null,
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Address on rent agreement differs from application",
+        "expected": "R08",
+        "llm": "R08",
+        "llm_confidence": 0.85,
+        "lexicon": "R08",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Director DOB does not match ID",
+        "expected": "R09",
+        "llm": "R09",
+        "llm_confidence": 0.85,
+        "lexicon": "R09",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Authorised signatory KYC missing",
+        "expected": "R09",
+        "llm": "R09",
+        "llm_confidence": 0.9,
+        "lexicon": "R09",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Online betting services not supported",
+        "expected": "R10",
+        "llm": "R10",
+        "llm_confidence": 0.95,
+        "lexicon": "R10",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Sells prohibited goods",
+        "expected": "R10",
+        "llm": "R10",
+        "llm_confidence": 0.93,
+        "lexicon": "R10",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Website sells electronics but category chosen is apparel",
+        "expected": "R11",
+        "llm": "R11",
+        "llm_confidence": 0.96,
+        "lexicon": "R11",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Category mismatch with site content",
+        "expected": "R11",
+        "llm": "R11",
+        "llm_confidence": 0.93,
+        "lexicon": "R11",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Name matched a watchlist during screening",
+        "expected": "R12",
+        "llm": "R12",
+        "llm_confidence": 0.93,
+        "lexicon": "R12",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Applicant never completed the form",
+        "expected": "R13",
+        "llm": "R13",
+        "llm_confidence": 0.93,
+        "lexicon": null,
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Please check the details and resubmit",
+        "expected": null,
+        "llm": "R13",
+        "llm_confidence": 0.2,
+        "lexicon": "R05",
+        "passed": true,
+        "error": null
+      },
+      {
+        "text": "Documents pending",
+        "expected": null,
+        "llm": "R13",
+        "llm_confidence": 0.35,
+        "lexicon": null,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  "nudges": {
+    "passed": 12,
+    "total": 12,
+    "rows": [
+      {
+        "application_id": "A3004",
+        "language": "Hindi",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "नमस्ते! हम Razorpay ऑनबोर्डिंग टीम से हैं, आपके आवेदन A3004 (Health & Pharmacy) के बारे में।\n\nआपका आवेदन अभी KYC दस्तावेज़ चरण पर रुका हुआ है।\n\n*क्या हुआ:* आपके PAN कार्ड पर लिखा नाम, आवेदन में दर्ज व्यवसाय के नाम से अलग है।\n\n*आपको क्या करना है:* उस व्यवसाय (या प्रोप्राइटर) का PAN अपलोड करें जिसका नाम आवेदन से मेल खाता हो, या व्यवसाय का नाम PAN के अनुसार सही करें।\n\n*अगला कदम:* अपना आवेदन यहाँ खोलें - [RESUME_LINK] - यह सुधार करें और दोबारा सबमिट करें।\n\nकोई सवाल हो तो इसी मैसेज का जवाब दें, हम मदद के लिए तैयार हैं।\n\nधन्यवाद,\nRazorpay ऑनबोर्डिंग टीम"
+      },
+      {
+        "application_id": "A3007",
+        "language": "Tamil",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "வணக்கம்! நாங்கள் Razorpay ஆன்போர்டிங் குழு, உங்கள் விண்ணப்பம் A3007 (Education / Coaching) குறித்து தொடர்புகொள்கிறோம்.\n\nஉங்கள் விண்ணப்பம் தற்போது KYC ஆவணங்கள் படியில் நிறுத்தப்பட்டுள்ளது. அவசரம் இல்லை, உங்களுக்கு வசதியான நேரத்தில் தொடரலாம்.\n\n*என்ன நடந்தது:* அங்கீகரிக்கப்பட்ட கையொப்பதாரர் அல்லது இயக்குநரின் அடையாளச் சான்று இல்லை, அல்லது விவரங்கள் விண்ணப்பத்துடன் பொருந்தவில்லை.\n\n*நீங்கள் செய்ய வேண்டியது:* அங்கீகரிக்கப்பட்ட கையொப்பதாரரின் செல்லுபடியான அடையாளச் சான்றைப் பதிவேற்றி, பெயரும் பிறந்த தேதியும் விண்ணப்பத்துடன் பொருந்துவதை உறுதிசெய்யவும்.\n\n*அடுத்த படி:* உங்கள் விண்ணப்பத்தை இங்கே திறக்கவும் - [RESUME_LINK] - இந்தத் திருத்தத்தைச் செய்து மீண்டும் சமர்ப்பிக்கவும்.\n\nஏதேனும் கேள்விகள் இருந்தால் இந்தச் செய்திக்குப் பதிலளிக்கவும், உதவ நாங்கள் தயாராக இருக்கிறோம்.\n\nநன்றி,\nRazorpay ஆன்போர்டிங் குழு"
+      },
+      {
+        "application_id": "A3001",
+        "language": "Marathi",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "नमस्कार! आम्ही Razorpay ऑनबोर्डिंग टीम, तुमच्या अर्ज A3001 (Gifting & Festive) बद्दल संपर्क करत आहोत. तुमचा अर्ज सध्या KYC कागदपत्रे टप्प्यावर थांबला आहे.\n\nआधी आमच्याशी संपर्क साधल्याबद्दल धन्यवाद. काय करायचे आहे ते खाली सोप्या शब्दांत सांगितले आहे.\n\n*काय झाले:* भरलेला GSTIN चुकीचा किंवा निष्क्रिय आहे, किंवा तो दुसऱ्या कायदेशीर नावाचा किंवा पत्त्याचा आहे.\n\n*तुम्हाला काय करायचे आहे:* योग्य GSTIN भरा, किंवा तुमच्या कायदेशीर नाव व पत्त्याशी जुळणारे सध्याचे GST प्रमाणपत्र अपलोड करा.\n\n*पुढची पायरी:* तुमचा अर्ज इथे उघडा - [RESUME_LINK] - ही दुरुस्ती करा आणि पुन्हा सबमिट करा. तुम्ही तयार असाल तेव्हा KYC कागदपत्रे टप्प्यापासूनच पुढे सुरू करू शकता.\n\nकाही प्रश्न असल्यास या मेसेजला उत्तर द्या - आम्ही मदतीसाठी तयार आहोत.\n\nधन्यवाद,\nRazorpay ऑनबोर्डिंग टीम"
+      },
+      {
+        "application_id": "A3020",
+        "language": "Kannada",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "ನಮಸ್ಕಾರ! ನಾವು Razorpay ಆನ್‌ಬೋರ್ಡಿಂಗ್ ತಂಡ. ನಿಮ್ಮ ಅರ್ಜಿ A3020 (SaaS / Digital Services) ಕುರಿತು ಸಂಪರ್ಕಿಸುತ್ತಿದ್ದೇವೆ.\n\nನಿಮ್ಮ ಅರ್ಜಿ ಈಗ ವೆಬ್‌ಸೈಟ್/ಆ್ಯಪ್ ಪರಿಶೀಲನೆ ಹಂತದಲ್ಲಿ ನಿಂತಿದೆ.\n\n*ಏನಾಯಿತು:* ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಅಥವಾ ಆ್ಯಪ್‌ನಲ್ಲಿ ಅಗತ್ಯ ಪುಟಗಳಿಲ್ಲ: Terms & Conditions, Privacy Policy, Refund/Cancellation Policy ಅಥವಾ ಸಂಪರ್ಕ ವಿವರಗಳು.\n\n*ನೀವು ಮಾಡಬೇಕಾದದ್ದು:* ಈ ನಾಲ್ಕೂ ಪುಟಗಳನ್ನು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಲಿಂಕ್‌ಗಳೊಂದಿಗೆ ಸೇರಿಸಿ, ನಂತರ ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ URL ಅನ್ನು ಮತ್ತೆ ಸಲ್ಲಿಸಿ.\n\nಈ ಹಂತದಲ್ಲಿ ನೀವು ಕೆಲವು ಬಾರಿ ಪ್ರಯತ್ನಿಸಬೇಕಾಯಿತು ಎಂದು ನಾವು ಗಮನಿಸಿದ್ದೇವೆ. ನೀವು ಬಯಸಿದರೆ, ನಮ್ಮ ತಂಡ ಪ್ರತಿ ಹಂತದಲ್ಲೂ ನಿಮಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡುತ್ತದೆ - 'HELP' ಎಂದು ಉತ್ತರಿಸಿ.\n\n*ಮುಂದಿನ ಹಂತ:* ನಿಮ್ಮ ಅರ್ಜಿಯನ್ನು ಇಲ್ಲಿ ತೆರೆಯಿರಿ - [RESUME_LINK] - ಈ ತಿದ್ದುಪಡಿ ಮಾಡಿ ಮತ್ತೆ ಸಲ್ಲಿಸಿ.\n\nಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿದ್ದರೆ ಈ ಸಂದೇಶಕ್ಕೆ ಉತ್ತರಿಸಿ - ಸಹಾಯ ಮಾಡಲು ನಾವು ಸಿದ್ಧರಿದ್ದೇವೆ.\n\nಧನ್ಯವಾದಗಳು,\nRazorpay ಆನ್‌ಬೋರ್ಡಿಂಗ್ ತಂಡ"
+      },
+      {
+        "application_id": "A3015",
+        "language": "English",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "Hello,\n\nThis is the Razorpay onboarding team, writing about your application A3015 (Health & Pharmacy). Your application is currently paused at the Website/App review step.\n\nThank you for reaching out to us earlier. Here is exactly what is needed.\n\nWhat happened: The business category selected in your application is different from what your website actually sells.\n\nWhat you need to do: Select the correct business category, or share a short note with evidence explaining your business model for a second review.\n\nWe noticed this step has taken a few tries. If you'd like, our onboarding team can guide you through it step by step. Just reply 'HELP'.\n\nNext step: please open your application here - [RESUME_LINK] - make this correction and resubmit.\n\nIf you have any questions, just reply to this email. We're happy to help.\n\nThank you,\nRazorpay Onboarding Team"
+      },
+      {
+        "application_id": "A3012",
+        "language": "Hinglish",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "Namaste! Hum Razorpay onboarding team se hain, aapki application A3012 (Health & Pharmacy) ke baare mein.\n\nAapki application abhi Bank verification step par ruki hui hai.\n\n*Kya hua:* Bank account holder ka naam aapke business ya PAN ke naam se alag hai.\n\n*Aapko kya karna hai:* Business ke naam par (proprietorship mein proprietor ke naam par) current account use karein, ya matching naam wala bank letter / cancelled cheque upload karein.\n\n*Agla step:* Yahan apni application kholein - [RESUME_LINK] - yeh correction karein aur dobara submit karein.\n\nKoi sawaal ho toh isi message ka reply karein, hum madad ke liye ready hain.\n\nDhanyavaad,\nRazorpay Onboarding Team"
+      },
+      {
+        "application_id": "A3094",
+        "language": "Tamil",
+        "decision": "Route to Compliance",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "வணக்கம்! நாங்கள் Razorpay ஆன்போர்டிங் குழு, உங்கள் விண்ணப்பம் A3094 (Electronics) குறித்து தொடர்புகொள்கிறோம்.\n\n*நிலை:* உங்கள் விண்ணப்பம் தற்போது மதிப்பாய்வில் உள்ளது.\n\n*அடுத்த படி:* இப்போது நீங்கள் எதுவும் செய்ய வேண்டியதில்லை. மதிப்பாய்வு முடிந்ததும் உங்களைத் தொடர்புகொள்வோம்.\n\nநன்றி,\nRazorpay ஆன்போர்டிங் குழு"
+      },
+      {
+        "application_id": "A3082",
+        "language": "English",
+        "decision": "Route to Compliance",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "Hello,\n\nThis is the Razorpay onboarding team, writing about your application A3082 (Gifting & Festive).\n\nYour application is currently under review.\n\nNo action is needed from you right now. We will contact you once the review is complete.\n\nThank you for your patience.\n\nWarm regards,\nRazorpay Onboarding Team"
+      },
+      {
+        "application_id": "A3039",
+        "language": "English",
+        "decision": "Close",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "Hello! This is the Razorpay onboarding team, writing about your application A3039 (Gifting & Festive).\n\n*Issue:* After review, we are unable to support the type of business described in your application.\n\n*Outcome:* We are therefore unable to proceed with this application.\n\nWe are sorry we could not help this time. If you have questions about this decision, you can reply to this message.\n\nThank you,\nRazorpay Onboarding Team"
+      },
+      {
+        "application_id": "A3093",
+        "language": "Tamil",
+        "decision": "Close",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "வணக்கம்! நாங்கள் Razorpay ஆன்போர்டிங் குழு, உங்கள் விண்ணப்பம் A3093 (Travel & Hospitality) குறித்து தொடர்புகொள்கிறோம்.\n\n*காரணம்:* மதிப்பாய்வுக்குப் பிறகு, உங்கள் விண்ணப்பத்தில் குறிப்பிட்டுள்ள வணிக வகையை எங்களால் ஆதரிக்க இயலவில்லை.\n\n*அடுத்த நிலை:* எனவே இந்த விண்ணப்பத்தைத் தொடர இயலாது.\n\nஇந்த முடிவு குறித்து கேள்விகள் இருந்தால், இந்தச் செய்திக்குப் பதிலளிக்கலாம்.\n\nநன்றி,\nRazorpay ஆன்போர்டிங் குழு"
+      },
+      {
+        "application_id": "A3023",
+        "language": "Kannada",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "ನಮಸ್ಕಾರ! ನಾವು Razorpay ಆನ್‌ಬೋರ್ಡಿಂಗ್ ತಂಡ. ನಿಮ್ಮ ಅರ್ಜಿ A3023 (Home & Furniture) ಕುರಿತು ಸಂಪರ್ಕಿಸುತ್ತಿದ್ದೇವೆ. ಹಿಂದೆ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು.\n\nನಿಮ್ಮ ಅರ್ಜಿ ಪ್ರಸ್ತುತ KYC ದಾಖಲೆಗಳ ಹಂತದಲ್ಲಿ ನಿಂತಿದೆ.\n\n*ಏನಾಯಿತು:* ಅಧಿಕೃತ ಸಹಿದಾರರ ಅಥವಾ ನಿರ್ದೇಶಕರ ಗುರುತಿನ ಚೀಟಿ ಇಲ್ಲ, ಅಥವಾ ವಿವರಗಳು ಅರ್ಜಿಗೆ ಹೊಂದುತ್ತಿಲ್ಲ.\n\n*ನೀವು ಮಾಡಬೇಕಾದದ್ದು:* ಅಧಿಕೃತ ಸಹಿದಾರರ ಮಾನ್ಯ ಗುರುತಿನ ಚೀಟಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ಮತ್ತು ಹೆಸರು ಹಾಗೂ ಜನ್ಮ ದಿನಾಂಕ ಅರ್ಜಿಗೆ ಹೊಂದುತ್ತವೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.\n\n*ಮುಂದಿನ ಹಂತ:* ನಿಮ್ಮ ಅರ್ಜಿಯನ್ನು ಇಲ್ಲಿ ತೆರೆಯಿರಿ - [RESUME_LINK] - ಈ ತಿದ್ದುಪಡಿ ಮಾಡಿ ಮತ್ತೆ ಸಲ್ಲಿಸಿ. ನೀವು ಸಿದ್ಧರಾದಾಗ, KYC ದಾಖಲೆಗಳ ಹಂತದಿಂದಲೇ ಮುಂದುವರಿಸಬಹುದು.\n\nಈ ಹಂತದಲ್ಲಿ ಕೆಲವು ಬಾರಿ ಪ್ರಯತ್ನಿಸಬೇಕಾಯಿತು ಎಂದು ನಾವು ಗಮನಿಸಿದ್ದೇವೆ. ನೀವು ಬಯಸಿದರೆ, ನಮ್ಮ ತಂಡವು ಪ್ರತಿ ಹಂತದಲ್ಲೂ ಮಾರ್ಗದರ್ಶನ ನೀಡುತ್ತದೆ - 'HELP' ಎಂದು ಉತ್ತರಿಸಿ.\n\nಧನ್ಯವಾದಗಳು,\nRazorpay ಆನ್‌ಬೋರ್ಡಿಂಗ್ ತಂಡ"
+      },
+      {
+        "application_id": "A3005",
+        "language": "English",
+        "decision": "Recover",
+        "passed_guardrails": true,
+        "violations": [],
+        "error": null,
+        "body": "Hello! This is the Razorpay onboarding team, writing about your application A3005 (Education / Coaching).\n\n*What happened:* Your application is not complete yet - it stopped at the KYC documents step.\n\n*What you need to do:* Continue from the KYC documents step using the link below and complete the remaining details.\n\n*Next step:* Continue your application here - [RESUME_LINK]\n\nQuick question (optional): what made you pause?\n1. The process felt long or confusing\n2. I didn't have the documents ready\n3. I chose another payment provider\n4. I don't need it right now\nPlease reply with 1, 2, 3 or 4.\n\nIf you have any questions, just reply to this message - we're happy to help.\n\nThank you,\nRazorpay Onboarding Team"
+      }
+    ]
+  },
+  "note": "Labels are the builder's manual labels, not the hidden answer key. Paraphrases are author-written."
+}

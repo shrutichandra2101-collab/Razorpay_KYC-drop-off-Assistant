@@ -1,0 +1,60 @@
+{
+  "_note": "Product recommendations are PROPOSALS by this application (not workbook facts). 'preventability' is an ASSUMED share of the cause a pre-submission product change could remove; it is used only to rank themes and is editable here.",
+  "themes": [
+    {
+      "id": "T1", "name": "Early name-match validation (PAN + bank)", "codes": ["R01", "R03"],
+      "intervention": "Fetch the PAN-registered name as soon as PAN is entered and pre-fill/lock the business name; run a bank-account name match (penny-drop name check) before submission and show the mismatch inline.",
+      "operational_benefit": "Removes the two name-mismatch rejections before a reviewer sees the file; fewer manual reviews and resubmission loops.",
+      "preventability": 0.8
+    },
+    {
+      "id": "T2", "name": "Real-time GSTIN validation", "codes": ["R02"],
+      "intervention": "Validate GSTIN status, legal name and address against the GST registry while the merchant types; block inactive GSTINs with a clear message.",
+      "operational_benefit": "Catches wrong/inactive GSTINs instantly instead of after review.",
+      "preventability": 0.8
+    },
+    {
+      "id": "T3", "name": "Instant bank-detail validation", "codes": ["R04"],
+      "intervention": "IFSC lookup with branch confirmation, account-number re-entry, and an immediate test-credit check with retry guidance.",
+      "operational_benefit": "Fewer failed test credits and support contacts at bank verification.",
+      "preventability": 0.75
+    },
+    {
+      "id": "T4", "name": "Smart document capture", "codes": ["R05"],
+      "intervention": "On-device blur/crop/password detection and file-size check at upload, with retake guidance.",
+      "operational_benefit": "Unreadable documents are rejected at upload, not after review.",
+      "preventability": 0.7
+    },
+    {
+      "id": "T5", "name": "Website readiness checklist + policy templates", "codes": ["R06", "R07"],
+      "intervention": "Automated pre-check of the submitted URL (live, no login wall, four policy pages present) plus ready-to-use T&C / Privacy / Refund / Contact page templates.",
+      "operational_benefit": "Merchants fix website gaps before submitting; reviewer time per website drops.",
+      "preventability": 0.65
+    },
+    {
+      "id": "T6", "name": "Address-proof recency check", "codes": ["R08"],
+      "intervention": "Ask for the document date at upload and warn if older than 3 months or if the address differs from the application.",
+      "operational_benefit": "Fewer outdated address-proof rejections.",
+      "preventability": 0.7
+    },
+    {
+      "id": "T7", "name": "Signatory details checklist", "codes": ["R09"],
+      "intervention": "Business-type-specific checklist of who the authorised signatory is, with name/DOB match against the uploaded ID.",
+      "operational_benefit": "Fewer incomplete signatory submissions.",
+      "preventability": 0.7
+    },
+    {
+      "id": "T8", "name": "Guided business-category selection", "codes": ["R11"],
+      "intervention": "Suggest the category from the website content and ask the merchant to confirm before submission.",
+      "operational_benefit": "Fewer category/website mismatches sent for second review.",
+      "preventability": 0.6
+    },
+    {
+      "id": "T9", "name": "Save-and-resume with step-specific reminders", "codes": ["R13"],
+      "intervention": "Persist partial progress, deep-link reminders to the exact step, and show a progress bar with what is left.",
+      "operational_benefit": "Addresses silent drop-off - a journey problem, not a document problem. Root cause of each abandonment is unknown, so preventability is assumed lower.",
+      "preventability": 0.35
+    }
+  ],
+  "non_recoverable_note": "R10 (restricted category) and R12 (compliance) are not product-fixable recovery causes. A signup-time category eligibility notice can save wasted effort for restricted businesses, but it must never suggest a workaround."
+}

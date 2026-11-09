@@ -1,0 +1,672 @@
+{
+  "generated_at": "2026-11-09 11:40 UTC",
+  "model": "claude-sonnet-5-5",
+  "modes": {
+    "rules": {
+      "correct": 25,
+      "total": 25,
+      "fell_back_to_rules": null,
+      "avg_seconds": 0.0,
+      "rows": [
+        {
+          "question": "How many applications are stuck?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 75",
+          "answer": "75 applications match (all stuck (non-activated) applications) - 100.0% of the 75 stuck applications, with ₹1038.4L expected monthly TPV. Most common reason: Stopped midway (no rejection) (22).",
+          "source": "rules",
+          "seconds": 0.01,
+          "buttons": [
+            "Open these 75 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many accounts are stuck in KYC?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 32",
+          "answer": "32 applications match (stage = KYC docs) - 42.7% of the 75 stuck applications, with ₹504.4L expected monthly TPV. Most common reason: PAN name doesn't match business name (9).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 32 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many are stuck at bank verification?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 17",
+          "answer": "17 applications match (stage = Bank verification) - 22.7% of the 75 stuck applications, with ₹199.6L expected monthly TPV. Most common reason: Bank account name doesn't match (7).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 17 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many are stuck at website review?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 16",
+          "answer": "16 applications match (stage = Website/App review) - 21.3% of the 75 stuck applications, with ₹193.4L expected monthly TPV. Most common reason: Website missing policy pages (7).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 16 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many merchants stopped midway without a rejection?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 22",
+          "answer": "22 applications match (reason = R13 (Stopped midway (no rejection))) - 29.3% of the 75 stuck applications, with ₹307.6L expected monthly TPV. Most common reason: Stopped midway (no rejection) (22).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 22 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many have a PAN name mismatch?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 9",
+          "answer": "9 applications match (reason = R01 (PAN name doesn't match business name)) - 12.0% of the 75 stuck applications, with ₹54.9L expected monthly TPV. Most common reason: PAN name doesn't match business name (9).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 9 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many GST problems are there?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 6",
+          "answer": "6 applications match (reason = R02 (GST details don't match)) - 8.0% of the 75 stuck applications, with ₹106.3L expected monthly TPV. Most common reason: GST details don't match (6).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 6 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many cases are with compliance?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 3",
+          "answer": "3 applications match (decision = Route to Compliance) - 4.0% of the 75 stuck applications, with ₹57.6L expected monthly TPV. Most common reason: Under compliance review (3).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 3 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many applications must be closed?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 5",
+          "answer": "5 applications match (decision = Close) - 6.7% of the 75 stuck applications, with ₹46.9L expected monthly TPV. Most common reason: Restricted business type (5).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 5 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many applications are recoverable?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 67",
+          "answer": "67 applications match (decision = Recover) - 89.3% of the 75 stuck applications, with ₹933.9L expected monthly TPV. Most common reason: Stopped midway (no rejection) (22).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 67 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many need a human decision?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 1",
+          "answer": "1 application matches (needs human review) - 1.3% of the 75 stuck applications, with ₹4.3L expected monthly TPV. Most common reason: Restricted business type (1).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open this case"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many high priority cases are there?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 22",
+          "answer": "22 applications match (priority = High) - 29.3% of the 75 stuck applications, with ₹388.7L expected monthly TPV. Most common reason: Stopped midway (no rejection) (5).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 22 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many merchants are struggling?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 17",
+          "answer": "17 applications match (friction = High) - 22.7% of the 75 stuck applications, with ₹229.6L expected monthly TPV. Most common reason: PAN name doesn't match business name (3).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 17 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many Tamil-speaking merchants are stuck?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 13",
+          "answer": "13 applications match (language = Tamil) - 17.3% of the 75 stuck applications, with ₹145.0L expected monthly TPV. Most common reason: Stopped midway (no rejection) (4).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 13 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many Hindi merchants are stuck at KYC?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 5",
+          "answer": "5 applications match (stage = KYC docs; language = Hindi) - 6.7% of the 75 stuck applications, with ₹135.6L expected monthly TPV. Most common reason: PAN name doesn't match business name (2).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 5 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many rejected applications are there?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 8",
+          "answer": "8 applications match (status = Rejected) - 10.7% of the 75 stuck applications, with ₹104.5L expected monthly TPV. Most common reason: Restricted business type (5).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 8 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many applications are activated?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 25",
+          "answer": "25 of 100 applications are activated and need no recovery.",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [],
+          "issues": []
+        },
+        {
+          "question": "How many stuck merchants have been inactive for more than 30 days?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 15",
+          "answer": "15 applications match (inactive ≥ 31 days) - 20.0% of the 75 stuck applications, with ₹168.5L expected monthly TPV. Most common reason: PAN name doesn't match business name (3).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open these 15 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How much expected TPV is in recoverable cases?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 933.9",
+          "answer": "Expected monthly TPV for decision = Recover: ₹933.9L (declared, not actual revenue). By stage: KYC docs ₹446.8L (29); Bank verification ₹199.6L (17); Website/App review ₹146.5L (11); Business details ₹141.0L (10).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Explore TPV in Insights"
+          ],
+          "issues": []
+        },
+        {
+          "question": "What is the expected TPV of applications stuck at KYC?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 504.4",
+          "answer": "Expected monthly TPV for stage = KYC docs: ₹504.4L (declared, not actual revenue). By stage: KYC docs ₹504.4L (32).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Explore TPV in Insights"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Which case should I work on first?",
+          "kind": "id",
+          "passed": true,
+          "detail": "expected A3023",
+          "answer": "67 applications match (in recovery queue). Top 3 by priority: A3023 (Signatory ID missing, ₹59.9L), A3081 (Signatory ID missing, ₹50.9L), A3047 (Website missing policy pages, ₹15.2L).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open all 67"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Which stuck merchant has the highest expected TPV?",
+          "kind": "id",
+          "passed": true,
+          "detail": "expected A3023",
+          "answer": "75 applications match (all stuck (non-activated) applications). Top 3 by tpv: A3023 (Signatory ID missing, ₹59.9L), A3022 (Document unreadable, ₹51.0L), A3081 (Signatory ID missing, ₹50.9L).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open all 75"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Tell me about A3022",
+          "kind": "text",
+          "passed": true,
+          "detail": "expected mention of 'unreadable'",
+          "answer": "A3022 (Private Limited, Health & Pharmacy, Kochi) stopped at KYC docs 28 days ago. Reason: Document unreadable [AI-inferred from reviewer text, confidence 0.86]. Decision: Recover. Priority: High; friction Medium. Next: send the English WhatsApp message.",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open A3022"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Show me the KYC cases",
+          "kind": "nav",
+          "passed": true,
+          "detail": "",
+          "answer": "32 applications match (stage = KYC docs). Top 5 by priority: A3023 (Signatory ID missing, ₹59.9L), A3081 (Signatory ID missing, ₹50.9L), A3001 (GST details don't match, ₹12.9L), A3022 (Document unreadable, ₹51.0L), A3009 (GST details don't match, ₹7.5L).",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [
+            "Open all 32"
+          ],
+          "issues": []
+        },
+        {
+          "question": "What's the weather in Bengaluru today?",
+          "kind": "refuse",
+          "passed": true,
+          "detail": "should decline without inventing numbers",
+          "answer": "I can only answer questions about the stuck onboarding applications in this workbook - counts, reasons, TPV, priorities, struggling merchants or a specific application ID.",
+          "source": "rules",
+          "seconds": 0.0,
+          "buttons": [],
+          "issues": []
+        }
+      ]
+    },
+    "claude": {
+      "correct": 25,
+      "total": 25,
+      "fell_back_to_rules": 0,
+      "avg_seconds": 3.6,
+      "rows": [
+        {
+          "question": "How many applications are stuck?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 75",
+          "answer": "**75 applications** are stuck, with ₹1038.4L declared expected monthly TPV. The most common reason is stopped midway with no rejection (22). 67 are marked Recover, 5 Close and 3 Route to Compliance.",
+          "source": "claude",
+          "seconds": 3.3,
+          "buttons": [
+            "Open all 75 stuck applications",
+            "See why they're stuck"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many accounts are stuck in KYC?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 32",
+          "answer": "**32 applications** are stuck at KYC docs, which is 42.7% of the 75 stuck. Their combined expected monthly TPV is ₹504.4L (declared, not actual). The top reason is PAN name mismatch (9). 29 are marked Recover and 3 Route to Compliance.",
+          "source": "claude",
+          "seconds": 4.0,
+          "buttons": [
+            "Open these 32 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many are stuck at bank verification?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 17",
+          "answer": "**17 applications** are stuck at bank verification. That is 22.7% of the 75 stuck applications, with ₹199.6L expected monthly TPV (declared). The top reason is a bank account name mismatch (7). Another 6 stopped midway and 4 failed verification. All 17 are marked Recover.",
+          "source": "claude",
+          "seconds": 3.7,
+          "buttons": [
+            "Open these 17 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many are stuck at website review?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 16",
+          "answer": "**16 applications** are stuck at Website/App review, which is 21.3% of the 75 stuck. Their declared expected TPV is ₹193.4L per month. The top reason is missing policy pages (7), followed by restricted business type (5). 11 are marked Recover and 5 Close.",
+          "source": "claude",
+          "seconds": 3.6,
+          "buttons": [
+            "Open these 16 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many merchants stopped midway without a rejection?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 22",
+          "answer": "**22 merchants** stopped midway without a rejection. That's 29.3% of the 75 stuck applications, with ₹307.6L declared expected monthly TPV. All 22 are marked Recover; 5 are High priority, 11 Medium and 6 Low.",
+          "source": "claude",
+          "seconds": 3.5,
+          "buttons": [
+            "Open these 22 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many have a PAN name mismatch?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 9",
+          "answer": "**9 applications** are stuck on a PAN name mismatch. That is 12.0% of the 75 stuck applications, with ₹54.9L declared expected monthly TPV. All 9 are marked Recover. By priority: 3 High, 4 Medium, 2 Low.",
+          "source": "claude",
+          "seconds": 3.3,
+          "buttons": [
+            "Open these 9 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many GST problems are there?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 6",
+          "answer": "**6 applications** are stuck on GST details not matching, which is 8.0% of the 75 stuck applications. Their declared expected TPV is ₹106.3L per month. All 6 are marked Recover, and 3 of them are High priority.",
+          "source": "claude",
+          "seconds": 3.4,
+          "buttons": [
+            "Open these 6 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many cases are with compliance?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 3",
+          "answer": "**3 cases** are routed to compliance, which is 4.0% of the 75 stuck applications. Their combined declared expected TPV is ₹57.6L per month. All 3 are under compliance review.",
+          "source": "claude",
+          "seconds": 3.3,
+          "buttons": [
+            "Open these 3 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many applications must be closed?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 5",
+          "answer": "**5 applications** are marked for closure, which is 6.7% of the 75 stuck applications. All 5 are closed for the same reason: restricted business type. Their combined declared expected TPV is ₹46.9L per month. You can close them from the case screen.",
+          "source": "claude",
+          "seconds": 3.6,
+          "buttons": [
+            "Open these 5 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many applications are recoverable?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 67",
+          "answer": "**67 applications** are recoverable, which is 89.3% of the 75 stuck applications. Their combined declared expected TPV is ₹933.9L per month. The most common reason is stopping midway with no rejection (22). 22 of them are High priority.",
+          "source": "claude",
+          "seconds": 3.9,
+          "buttons": [
+            "Open these 67 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many need a human decision?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 1",
+          "answer": "**1 application** needs a human decision. That is 1.3% of the 75 stuck applications, with ₹4.3L declared expected monthly TPV. It is a restricted business type (R10), and its current decision is Close.",
+          "source": "claude",
+          "seconds": 5.3,
+          "buttons": [
+            "Open A3051"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many high priority cases are there?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 22",
+          "answer": "There are **22 high priority cases**, which is 29.3% of the 75 stuck applications. Their declared expected TPV is ₹388.7L per month. All 22 are marked Recover. The most common reason is stopped midway with no rejection (5 cases).",
+          "source": "claude",
+          "seconds": 3.6,
+          "buttons": [
+            "Open these 22 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many merchants are struggling?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 17",
+          "answer": "**17 merchants** are struggling (high friction), 22.7% of the 75 stuck applications, with ₹229.6L expected monthly TPV (declared). 9 are at KYC docs; 11 tried 3+ times and 13 contacted support 2+ times. 15 are marked Recover.",
+          "source": "claude",
+          "seconds": 3.8,
+          "buttons": [
+            "Open these 17 cases",
+            "Struggle insights"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many Tamil-speaking merchants are stuck?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 13",
+          "answer": "**13 Tamil-speaking merchants** are stuck, which is 17.3% of the 75 stuck applications. Their combined expected monthly TPV is ₹145.0L (declared). The most common reason is stopping midway (4). 10 are marked Recover, 2 Close and 1 Route to Compliance.",
+          "source": "claude",
+          "seconds": 3.6,
+          "buttons": [
+            "Open these 13 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many Hindi merchants are stuck at KYC?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 5",
+          "answer": "**5 Hindi-language merchants** are stuck at KYC docs, 6.7% of the 75 stuck applications, with ₹135.6L expected monthly TPV (declared). The top reason is PAN name mismatch (2). 4 are marked Recover and 1 is routed to Compliance. 3 are High priority.",
+          "source": "claude",
+          "seconds": 3.5,
+          "buttons": [
+            "Open these 5 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many rejected applications are there?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 8",
+          "answer": "There are **8 rejected applications**, 10.7% of the 75 stuck, with ₹104.5L declared expected monthly TPV. Five are restricted business types (decision: Close) and three are under compliance review (route to Compliance).",
+          "source": "claude",
+          "seconds": 3.5,
+          "buttons": [
+            "Open these 8 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How many applications are activated?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 25",
+          "answer": "**25 of 100** applications are activated and need no recovery. The rest are stuck in onboarding.",
+          "source": "claude",
+          "seconds": 2.6,
+          "buttons": [],
+          "issues": []
+        },
+        {
+          "question": "How many stuck merchants have been inactive for more than 30 days?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 15",
+          "answer": "**15 stuck merchants** have been inactive for more than 30 days. That is 20.0% of the 75 stuck applications, with ₹168.5L declared expected monthly TPV. 13 are marked Recover and 2 Route to Compliance. The most common reason is PAN name mismatch (3).",
+          "source": "claude",
+          "seconds": 3.6,
+          "buttons": [
+            "Open these 15 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "How much expected TPV is in recoverable cases?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 933.9",
+          "answer": "Recoverable cases carry **₹933.9L** of declared expected monthly TPV across 67 applications, which is 89.3% of the 75 stuck. This is what merchants declared they expect, not actual revenue. 22 of the 67 stopped midway (R13), and 22 are High priority.",
+          "source": "claude",
+          "seconds": 3.8,
+          "buttons": [
+            "Open these 67 cases",
+            "See TPV breakdown"
+          ],
+          "issues": []
+        },
+        {
+          "question": "What is the expected TPV of applications stuck at KYC?",
+          "kind": "number",
+          "passed": true,
+          "detail": "expected 504.4",
+          "answer": "Applications stuck at KYC docs carry **₹504.4L** of declared expected monthly TPV across 32 applications (42.7% of the 75 stuck). This is what merchants declared, not actual revenue. The most common reason is PAN name mismatch (9).",
+          "source": "claude",
+          "seconds": 3.8,
+          "buttons": [
+            "Open these 32 cases",
+            "TPV insight"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Which case should I work on first?",
+          "kind": "id",
+          "passed": true,
+          "detail": "expected A3023",
+          "answer": "Start with **A3023**: High priority, recoverable, missing signatory ID, with the highest expected TPV (₹59.9L/month, declared). It has been inactive for 35 days, and the merchant's language is Kannada. Next is A3081 (₹50.9L, Hindi). There are **22** high-priority recoverable cases in total.",
+          "source": "claude",
+          "seconds": 4.2,
+          "buttons": [
+            "Open A3023",
+            "Open these 22 cases"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Which stuck merchant has the highest expected TPV?",
+          "kind": "id",
+          "passed": true,
+          "detail": "expected A3023",
+          "answer": "The highest expected TPV among stuck merchants is **A3023, at ₹59.9L per month** (declared). It's stuck on a missing signatory ID, has been inactive 35 days, and is High priority with a Recover decision. Preferred language is Kannada.",
+          "source": "claude",
+          "seconds": 3.5,
+          "buttons": [
+            "Open A3023",
+            "TPV breakdown"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Tell me about A3022",
+          "kind": "text",
+          "passed": true,
+          "detail": "expected mention of 'unreadable'",
+          "answer": "**A3022** is a Private Limited Health & Pharmacy merchant in Kochi, stalled at KYC docs for **28 days**. The reviewer noted the doc was blurred and cropped. The AI-inferred reason is \"Document unreadable\" (confidence 0.86). Decision: Recover, High priority, medium friction. Expected TPV is 51.0 lakh/month (declared). Next step: send the English WhatsApp message.",
+          "source": "claude",
+          "seconds": 3.9,
+          "buttons": [
+            "Open A3022"
+          ],
+          "issues": []
+        },
+        {
+          "question": "Show me the KYC cases",
+          "kind": "nav",
+          "passed": true,
+          "detail": "",
+          "answer": "**32 applications** are stuck at KYC docs (42.7% of stuck), with ₹504.4L expected monthly TPV (declared). The top reason is PAN name mismatch (9). 29 are recoverable and 3 route to Compliance. Top priority: A3023 (Signatory ID missing, ₹59.9L) and A3081 (₹50.9L).",
+          "source": "claude",
+          "seconds": 4.4,
+          "buttons": [
+            "Open these 32 cases",
+            "Open A3023",
+            "Why they're stuck"
+          ],
+          "issues": []
+        },
+        {
+          "question": "What's the weather in Bengaluru today?",
+          "kind": "refuse",
+          "passed": true,
+          "detail": "should decline without inventing numbers",
+          "answer": "I can't answer that. I only have data on merchant applications stuck in onboarding, and I don't have weather information. I can help with stuck applications, such as how many there are, why they're stuck, or which fixes to ship first.",
+          "source": "claude",
+          "seconds": 2.2,
+          "buttons": [],
+          "issues": []
+        }
+      ]
+    }
+  }
+}

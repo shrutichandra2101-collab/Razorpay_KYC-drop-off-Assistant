@@ -1,0 +1,2307 @@
+{
+  "generated_at": "2026-11-09 10:41 UTC",
+  "workbook_sha256": "9dd4af798e75d4527796a6011bcfba24517158c6e598c60ac5dddba6ff08201b",
+  "disclaimer": "Hidden evaluator answers are not available. Accuracy figures below are against MANUAL labels written by the builder and rule-consistency checks - not hidden-answer accuracy.",
+  "test_cases": {
+    "total": 33,
+    "passed": 33,
+    "checks": 181,
+    "checks_passed": 181
+  },
+  "metrics": {
+    "path_a_catalogue_lookup": {
+      "correct": 49,
+      "total": 49
+    },
+    "leave_code_out_lexicon_in_sample": {
+      "correct": 49,
+      "total": 49,
+      "note": "Lexicon authored with visibility of these messages - in-sample, optimistic."
+    },
+    "blank_code_vs_manual_labels": {
+      "correct": 4,
+      "total": 4,
+      "human_review_flagged": 1
+    },
+    "paraphrase_generalisation": {
+      "correct": 24,
+      "total": 26,
+      "silent_errors": 0,
+      "note": "Author-written, unseen by the lexicon; closer to real-world accuracy."
+    },
+    "recoverability_decisions": {
+      "correct": 75,
+      "total": 75
+    },
+    "compliance_handling_ok": true,
+    "restricted_handling_ok": true,
+    "channel_violations": 0,
+    "policy_violations": 0,
+    "messages_checked": 253,
+    "cases_requiring_human_review": 1
+  },
+  "priority_checks": [
+    {
+      "check": "no R10/R12/Close/Route in queue",
+      "passed": true,
+      "detail": "67 queued"
+    },
+    {
+      "check": "deterministic ranking across runs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "higher TPV never lowers a merchant's score (monotonic)",
+      "passed": true,
+      "detail": "tested on 20 queued rows"
+    },
+    {
+      "check": "high-friction merchants never Low priority",
+      "passed": true,
+      "detail": "15 high-friction"
+    }
+  ],
+  "cases": [
+    {
+      "id": "TC01",
+      "application_id": "A3004",
+      "category": "R01 PAN name mismatch - Hindi - WhatsApp",
+      "language": "Hindi",
+      "expected": {
+        "code": "R01",
+        "decision": "Recover",
+        "human_review": false
+      },
+      "actual": {
+        "code": "R01",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": "Low"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R01, expected R01"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "human-review flag",
+          "passed": true,
+          "detail": "got False"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Low"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC02",
+      "application_id": "A3001",
+      "category": "R02 GST mismatch - Marathi",
+      "language": "Marathi",
+      "expected": {
+        "code": "R02",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R02",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R02, expected R02"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        },
+        {
+          "check": "Marathi (Devanagari) message",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC03",
+      "application_id": "A3012",
+      "category": "R03 bank name mismatch - Hinglish",
+      "language": "Hinglish",
+      "expected": {
+        "code": "R03",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R03",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": "Low"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R03, expected R03"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Low"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC04",
+      "application_id": "A3021",
+      "category": "R04 bank verification - 4 attempts, 40 days inactive",
+      "language": "Hindi",
+      "expected": {
+        "code": "R04",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R04",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R04, expected R04"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        },
+        {
+          "check": "high friction detected",
+          "passed": true,
+          "detail": "High attempts (4) - repeated difficulty completing 'Bank verification'; Contacted support (1); Prolonged inactivity (40 days) - likely disengaged"
+        },
+        {
+          "check": "guided assistance offered",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC05",
+      "application_id": "A3016",
+      "category": "R05 unreadable document - Hindi",
+      "language": "Hindi",
+      "expected": {
+        "code": "R05",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R05",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R05, expected R05"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC06",
+      "application_id": "A3010",
+      "category": "R06 missing policy pages - English",
+      "language": "English",
+      "expected": {
+        "code": "R06",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R06",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R06, expected R06"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC07",
+      "application_id": "A3019",
+      "category": "R07 website not live - Hinglish",
+      "language": "Hinglish",
+      "expected": {
+        "code": "R07",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R07",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R07, expected R07"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC08",
+      "application_id": "A3072",
+      "category": "R08 address proof - WhatsApp opted OUT",
+      "language": "Hinglish",
+      "expected": {
+        "code": "R08",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R08",
+        "recovery_decision": "Recover",
+        "channel": "Email",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": "Low"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R08, expected R08"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=No -> Email"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Low"
+        },
+        {
+          "check": "WhatsApp not used",
+          "passed": true,
+          "detail": "Email"
+        },
+        {
+          "check": "email placeholder, no invented address",
+          "passed": true,
+          "detail": "[MERCHANT_EMAIL - not in dataset]"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC09",
+      "application_id": "A3007",
+      "category": "R09 signatory ID - Tamil",
+      "language": "Tamil",
+      "expected": {
+        "code": "R09",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R09",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R09, expected R09"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        },
+        {
+          "check": "Tamil script",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC10",
+      "application_id": "A3039",
+      "category": "R10 restricted category - English",
+      "language": "English",
+      "expected": {
+        "code": "R10",
+        "decision": "Close",
+        "human_review": false
+      },
+      "actual": {
+        "code": "R10",
+        "recovery_decision": "Close",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R10, expected R10"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Close, expected Close"
+        },
+        {
+          "check": "human-review flag",
+          "passed": true,
+          "detail": "got False"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Decision is Close - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC11",
+      "application_id": "A3015",
+      "category": "R11 category differs - Email channel",
+      "language": "English",
+      "expected": {
+        "code": "R11",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R11",
+        "recovery_decision": "Recover",
+        "channel": "Email",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R11, expected R11"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=No -> Email"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC12",
+      "application_id": "A3082",
+      "category": "R12 compliance - English",
+      "language": "English",
+      "expected": {
+        "code": "R12",
+        "decision": "Route to Compliance"
+      },
+      "actual": {
+        "code": "R12",
+        "recovery_decision": "Route to Compliance",
+        "channel": "Email",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R12, expected R12"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Route to Compliance, expected Route to Compliance"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=No -> Email"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Routed to Compliance - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC13",
+      "application_id": "A3094",
+      "category": "R12 compliance - Tamil neutral wording",
+      "language": "Tamil",
+      "expected": {
+        "code": "R12",
+        "decision": "Route to Compliance"
+      },
+      "actual": {
+        "code": "R12",
+        "recovery_decision": "Route to Compliance",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R12, expected R12"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Route to Compliance, expected Route to Compliance"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Routed to Compliance - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC14",
+      "application_id": "A3005",
+      "category": "Blank code + no message -> abandonment R13",
+      "language": "English",
+      "expected": {
+        "code": "R13",
+        "decision": "Recover",
+        "human_review": false
+      },
+      "actual": {
+        "code": "R13",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 0.95,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R13, expected R13"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "human-review flag",
+          "passed": true,
+          "detail": "got False"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        },
+        {
+          "check": "evidence is inactivity signal",
+          "passed": true,
+          "detail": "No rejection code or reviewer message; stopped at 'KYC docs' with 19 day(s) since last activity and 1 attempt(s)."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC15",
+      "application_id": "A3022",
+      "category": "Blank code + message -> AI infers R05",
+      "language": "English",
+      "expected": {
+        "code": "R05",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R05",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 0.86,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R05, expected R05"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        },
+        {
+          "check": "flagged as AI-inferred",
+          "passed": true,
+          "detail": "AI-inferred from reviewer text"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC16",
+      "application_id": "A3028",
+      "category": "Blank code + Hinglish message -> AI infers R01",
+      "language": "English",
+      "expected": {
+        "code": "R01",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R01",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 0.81,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": "Low"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R01, expected R01"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Low"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC17",
+      "application_id": "A3051",
+      "category": "Blank code + message -> inferred R10 needs human confirmation",
+      "language": "Hinglish",
+      "expected": {
+        "code": "R10",
+        "decision": "Close",
+        "human_review": true
+      },
+      "actual": {
+        "code": "R10",
+        "recovery_decision": "Close",
+        "channel": "WhatsApp",
+        "confidence": 0.87,
+        "human_review": "Required",
+        "friction_level": "Medium",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R10, expected R10"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Close, expected Close"
+        },
+        {
+          "check": "human-review flag",
+          "passed": true,
+          "detail": "got True"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Decision is Close - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "closure not actionable until verified",
+          "passed": true,
+          "detail": "Blocked - verify diagnosis before any action"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC18",
+      "application_id": "A3081",
+      "category": "Blank code + message -> AI infers R09",
+      "language": "Hindi",
+      "expected": {
+        "code": "R09",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R09",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 0.86,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R09, expected R09"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC19",
+      "application_id": "A3020",
+      "category": "R06 - Kannada",
+      "language": "Kannada",
+      "expected": {
+        "code": "R06",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R06",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R06, expected R06"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        },
+        {
+          "check": "Kannada script",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC20",
+      "application_id": "A3093",
+      "category": "R10 - Tamil closure, no workaround",
+      "language": "Tamil",
+      "expected": {
+        "code": "R10",
+        "decision": "Close"
+      },
+      "actual": {
+        "code": "R10",
+        "recovery_decision": "Close",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R10, expected R10"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Close, expected Close"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Decision is Close - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC21",
+      "application_id": "A3097",
+      "category": "R10 - Kannada closure",
+      "language": "Kannada",
+      "expected": {
+        "code": "R10",
+        "decision": "Close"
+      },
+      "actual": {
+        "code": "R10",
+        "recovery_decision": "Close",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R10, expected R10"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Close, expected Close"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Decision is Close - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC22",
+      "application_id": "A3023",
+      "category": "High TPV (59.9L) + 3 attempts + 3 support contacts",
+      "language": "Kannada",
+      "expected": {
+        "code": "R09",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R09",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R09, expected R09"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        },
+        {
+          "check": "High priority",
+          "passed": true,
+          "detail": "score 94.2"
+        },
+        {
+          "check": "High friction",
+          "passed": true,
+          "detail": "High attempts (3) - repeated difficulty completing 'KYC docs'; Multiple support contacts (3) - merchant needs clarification; Prolonged inactivity (35 days) - likely disengaged"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC23",
+      "application_id": "A3025",
+      "category": "Low TPV (0.7L) merchant still queued",
+      "language": "Hinglish",
+      "expected": {
+        "code": "R04",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R04",
+        "recovery_decision": "Recover",
+        "channel": "Email",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Low",
+        "priority": "Low"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R04, expected R04"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=No -> Email"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Low"
+        },
+        {
+          "check": "has a priority (not dropped)",
+          "passed": true,
+          "detail": "Low"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC24",
+      "application_id": "A3096",
+      "category": "R12 with high TPV (48L) never enters queue",
+      "language": "Hindi",
+      "expected": {
+        "code": "R12",
+        "decision": "Route to Compliance"
+      },
+      "actual": {
+        "code": "R12",
+        "recovery_decision": "Route to Compliance",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": null
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R12, expected R12"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Route to Compliance, expected Route to Compliance"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "excluded from recovery queue",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no follow-up sequence",
+          "passed": true,
+          "detail": "Routed to Compliance - no follow-ups are generated"
+        },
+        {
+          "check": "no resume link",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC25",
+      "application_id": "A3085",
+      "category": "R01 with 4 attempts -> guided help",
+      "language": "English",
+      "expected": {
+        "code": "R01",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R01",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R01, expected R01"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        },
+        {
+          "check": "guided assistance line present",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC26",
+      "application_id": "A3047",
+      "category": "3 support contacts -> support acknowledgement",
+      "language": "English",
+      "expected": {
+        "code": "R06",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R06",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 1.0,
+        "human_review": "Not required",
+        "friction_level": "High",
+        "priority": "High"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R06, expected R06"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority High"
+        },
+        {
+          "check": "support line present",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "High friction",
+          "passed": true,
+          "detail": "High attempts (3) - repeated difficulty completing 'Website/App review'; Multiple support contacts (3) - merchant needs clarification; Prolonged inactivity (38 days) - likely disengaged"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC27",
+      "application_id": "A3030",
+      "category": "Abandoned 34 days at Business details",
+      "language": "English",
+      "expected": {
+        "code": "R13",
+        "decision": "Recover"
+      },
+      "actual": {
+        "code": "R13",
+        "recovery_decision": "Recover",
+        "channel": "WhatsApp",
+        "confidence": 0.95,
+        "human_review": "Not required",
+        "friction_level": "Medium",
+        "priority": "Medium"
+      },
+      "checks": [
+        {
+          "check": "diagnosed code",
+          "passed": true,
+          "detail": "got R13, expected R13"
+        },
+        {
+          "check": "recovery decision",
+          "passed": true,
+          "detail": "got Recover, expected Recover"
+        },
+        {
+          "check": "channel consent",
+          "passed": true,
+          "detail": "opt-in=Yes -> WhatsApp"
+        },
+        {
+          "check": "no policy violations",
+          "passed": true,
+          "detail": "clean"
+        },
+        {
+          "check": "in recovery queue",
+          "passed": true,
+          "detail": "priority Medium"
+        },
+        {
+          "check": "prolonged inactivity indicator",
+          "passed": true,
+          "detail": "Prolonged inactivity (34 days) - likely disengaged"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC28",
+      "application_id": "A3002",
+      "category": "Activated application excluded",
+      "language": "",
+      "expected": {
+        "excluded": true
+      },
+      "actual": {},
+      "checks": [
+        {
+          "check": "activated not in output",
+          "passed": true,
+          "detail": "A3002"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC29",
+      "application_id": "SYN-1",
+      "category": "Rejected with no code and no message (synthetic)",
+      "language": "English",
+      "expected": {},
+      "actual": {
+        "code": null,
+        "confidence": 0.0,
+        "decision": null,
+        "channel": "WhatsApp"
+      },
+      "checks": [
+        {
+          "check": "undetermined, no invented reason",
+          "passed": true,
+          "detail": "None"
+        },
+        {
+          "check": "human review required",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no nudge drafted",
+          "passed": true,
+          "detail": "Withheld - diagnosis awaiting human verification"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC30",
+      "application_id": "SYN-2",
+      "category": "Unknown code R99 (synthetic)",
+      "language": "English",
+      "expected": {},
+      "actual": {
+        "code": null,
+        "confidence": 0.0,
+        "decision": null,
+        "channel": "WhatsApp"
+      },
+      "checks": [
+        {
+          "check": "not interpreted",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "human review",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC31",
+      "application_id": "SYN-3",
+      "category": "Stalled, no code, active yesterday (synthetic)",
+      "language": "English",
+      "expected": {},
+      "actual": {
+        "code": "R13",
+        "confidence": 0.6,
+        "decision": "Recover",
+        "channel": "WhatsApp"
+      },
+      "checks": [
+        {
+          "check": "held for human review",
+          "passed": true,
+          "detail": "Inactivity below the 3-day abandonment threshold - merchant may still be in progress."
+        },
+        {
+          "check": "not actionable",
+          "passed": true,
+          "detail": "Blocked - verify diagnosis before any action"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC32",
+      "application_id": "SYN-4",
+      "category": "Opt-in value missing -> no WhatsApp (synthetic)",
+      "language": "English",
+      "expected": {},
+      "actual": {
+        "code": "R13",
+        "confidence": 0.95,
+        "decision": "Recover",
+        "channel": "Email"
+      },
+      "checks": [
+        {
+          "check": "Email selected",
+          "passed": true,
+          "detail": "whatsapp_opted_in = 'missing' -> WhatsApp not permitted; using Email (+ in-app)."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "TC33",
+      "application_id": "SYN-5",
+      "category": "Ambiguous reviewer note (synthetic)",
+      "language": "English",
+      "expected": {},
+      "actual": {
+        "code": "R05",
+        "confidence": 0.68,
+        "decision": "Recover",
+        "channel": "WhatsApp"
+      },
+      "checks": [
+        {
+          "check": "low confidence -> human review",
+          "passed": true,
+          "detail": "conf 0.68"
+        },
+        {
+          "check": "no actionable recommendation",
+          "passed": true,
+          "detail": "Blocked - verify diagnosis before any action"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "leave_code_out": [
+    {
+      "application_id": "A3001",
+      "true": "R02",
+      "pred": "R02",
+      "confidence": 0.97,
+      "message": "GST certificate could not be validated against GSTIN entered"
+    },
+    {
+      "application_id": "A3004",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "PAN ka naam aur application ka naam match nahi kar raha"
+    },
+    {
+      "application_id": "A3007",
+      "true": "R09",
+      "pred": "R09",
+      "confidence": 0.86,
+      "message": "Signatory ka ID proof upload nahi hua"
+    },
+    {
+      "application_id": "A3009",
+      "true": "R02",
+      "pred": "R02",
+      "confidence": 0.97,
+      "message": "GST number galat hai ya certificate purana hai"
+    },
+    {
+      "application_id": "A3010",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Missing policy pages (T&C / refund / contact) on website"
+    },
+    {
+      "application_id": "A3012",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.76,
+      "message": "Bank account holder name does not match PAN / business name"
+    },
+    {
+      "application_id": "A3015",
+      "true": "R11",
+      "pred": "R11",
+      "confidence": 0.91,
+      "message": "Business category selected differs from website content"
+    },
+    {
+      "application_id": "A3016",
+      "true": "R05",
+      "pred": "R05",
+      "confidence": 0.9,
+      "message": "Document clear nahi hai, dobara upload karein"
+    },
+    {
+      "application_id": "A3017",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "PAN name does not match business name on application"
+    },
+    {
+      "application_id": "A3018",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Missing policy pages (T&C / refund / contact) on website"
+    },
+    {
+      "application_id": "A3019",
+      "true": "R07",
+      "pred": "R07",
+      "confidence": 0.86,
+      "message": "Website khul nahi raha hai"
+    },
+    {
+      "application_id": "A3020",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Website pe refund policy aur privacy policy nahi hai"
+    },
+    {
+      "application_id": "A3021",
+      "true": "R04",
+      "pred": "R04",
+      "confidence": 0.97,
+      "message": "IFSC/account number invalid or account inactive"
+    },
+    {
+      "application_id": "A3023",
+      "true": "R09",
+      "pred": "R09",
+      "confidence": 0.86,
+      "message": "Signatory ka ID proof upload nahi hua"
+    },
+    {
+      "application_id": "A3025",
+      "true": "R04",
+      "pred": "R04",
+      "confidence": 0.76,
+      "message": "Bank verify nahi hua, account number dobara daalein"
+    },
+    {
+      "application_id": "A3027",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "PAN name does not match business name on application"
+    },
+    {
+      "application_id": "A3031",
+      "true": "R02",
+      "pred": "R02",
+      "confidence": 0.97,
+      "message": "GST number galat hai ya certificate purana hai"
+    },
+    {
+      "application_id": "A3033",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Website pe refund policy aur privacy policy nahi hai"
+    },
+    {
+      "application_id": "A3036",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "PAN ka naam aur application ka naam match nahi kar raha"
+    },
+    {
+      "application_id": "A3038",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "Name on PAN card and business name different, pls check"
+    },
+    {
+      "application_id": "A3039",
+      "true": "R10",
+      "pred": "R10",
+      "confidence": 0.93,
+      "message": "Declared products fall under restricted category"
+    },
+    {
+      "application_id": "A3040",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "message": "Account name mismatch. Please provide bank letter"
+    },
+    {
+      "application_id": "A3041",
+      "true": "R07",
+      "pred": "R07",
+      "confidence": 0.86,
+      "message": "Website khul nahi raha hai"
+    },
+    {
+      "application_id": "A3043",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "message": "Bank account ka naam business se alag hai"
+    },
+    {
+      "application_id": "A3046",
+      "true": "R04",
+      "pred": "R04",
+      "confidence": 0.97,
+      "message": "IFSC/account number invalid or account inactive"
+    },
+    {
+      "application_id": "A3047",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Missing policy pages (T&C / refund / contact) on website"
+    },
+    {
+      "application_id": "A3049",
+      "true": "R02",
+      "pred": "R02",
+      "confidence": 0.76,
+      "message": "GSTIN inactive / legal name mismatch with application"
+    },
+    {
+      "application_id": "A3053",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "Name on PAN card and business name different, pls check"
+    },
+    {
+      "application_id": "A3057",
+      "true": "R02",
+      "pred": "R02",
+      "confidence": 0.97,
+      "message": "GST certificate could not be validated against GSTIN entered"
+    },
+    {
+      "application_id": "A3064",
+      "true": "R05",
+      "pred": "R05",
+      "confidence": 0.97,
+      "message": "Document not readable. Resubmit"
+    },
+    {
+      "application_id": "A3068",
+      "true": "R04",
+      "pred": "R04",
+      "confidence": 0.76,
+      "message": "Bank verify nahi hua, account number dobara daalein"
+    },
+    {
+      "application_id": "A3070",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.76,
+      "message": "Bank account holder name does not match PAN / business name"
+    },
+    {
+      "application_id": "A3072",
+      "true": "R08",
+      "pred": "R08",
+      "confidence": 0.86,
+      "message": "Address on proof does not match application address"
+    },
+    {
+      "application_id": "A3073",
+      "true": "R10",
+      "pred": "R10",
+      "confidence": 0.93,
+      "message": "Declared products fall under restricted category"
+    },
+    {
+      "application_id": "A3076",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "PAN ka naam aur application ka naam match nahi kar raha"
+    },
+    {
+      "application_id": "A3080",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Website does not display Terms, Privacy and Refund policy pages"
+    },
+    {
+      "application_id": "A3082",
+      "true": "R12",
+      "pred": "R12",
+      "confidence": 0.97,
+      "message": "Compliance review pending"
+    },
+    {
+      "application_id": "A3085",
+      "true": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "message": "PAN ka naam aur application ka naam match nahi kar raha"
+    },
+    {
+      "application_id": "A3088",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "message": "Bank account ka naam business se alag hai"
+    },
+    {
+      "application_id": "A3089",
+      "true": "R05",
+      "pred": "R05",
+      "confidence": 0.97,
+      "message": "Document not readable. Resubmit"
+    },
+    {
+      "application_id": "A3090",
+      "true": "R07",
+      "pred": "R07",
+      "confidence": 0.86,
+      "message": "Site requires login, cannot review products and prices"
+    },
+    {
+      "application_id": "A3091",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "message": "Account name mismatch. Please provide bank letter"
+    },
+    {
+      "application_id": "A3092",
+      "true": "R02",
+      "pred": "R02",
+      "confidence": 0.76,
+      "message": "GSTIN inactive / legal name mismatch with application"
+    },
+    {
+      "application_id": "A3093",
+      "true": "R10",
+      "pred": "R10",
+      "confidence": 0.93,
+      "message": "Is business category ko support nahi kar sakte"
+    },
+    {
+      "application_id": "A3094",
+      "true": "R12",
+      "pred": "R12",
+      "confidence": 0.97,
+      "message": "Screening hit - refer compliance"
+    },
+    {
+      "application_id": "A3095",
+      "true": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "message": "Account name mismatch. Please provide bank letter"
+    },
+    {
+      "application_id": "A3096",
+      "true": "R12",
+      "pred": "R12",
+      "confidence": 0.97,
+      "message": "Compliance review pending"
+    },
+    {
+      "application_id": "A3097",
+      "true": "R10",
+      "pred": "R10",
+      "confidence": 0.93,
+      "message": "Is business category ko support nahi kar sakte"
+    },
+    {
+      "application_id": "A3100",
+      "true": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "message": "Missing policy pages (T&C / refund / contact) on website"
+    }
+  ],
+  "blank_code": [
+    {
+      "application_id": "A3022",
+      "manual_label": "R05",
+      "pred": "R05",
+      "confidence": 0.86,
+      "human_review": false,
+      "message": "Doc blurred and cropped, cannot verify"
+    },
+    {
+      "application_id": "A3028",
+      "manual_label": "R01",
+      "pred": "R01",
+      "confidence": 0.81,
+      "human_review": false,
+      "message": "PAN ka naam aur application ka naam match nahi kar raha"
+    },
+    {
+      "application_id": "A3051",
+      "manual_label": "R10",
+      "pred": "R10",
+      "confidence": 0.87,
+      "human_review": true,
+      "message": "Business category not supported by policy"
+    },
+    {
+      "application_id": "A3081",
+      "manual_label": "R09",
+      "pred": "R09",
+      "confidence": 0.86,
+      "human_review": false,
+      "message": "Signatory ka ID proof upload nahi hua"
+    }
+  ],
+  "paraphrases": [
+    {
+      "text": "Name on PAN is not same as the firm name",
+      "expected": "R01",
+      "pred": "R01",
+      "confidence": 0.66,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "PAN holder name mismatch with entity",
+      "expected": "R01",
+      "pred": "R01",
+      "confidence": 0.41,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "GSTIN status cancelled on portal",
+      "expected": "R02",
+      "pred": "R02",
+      "confidence": 0.97,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "GST certificate belongs to another legal entity",
+      "expected": "R02",
+      "pred": "R02",
+      "confidence": 0.68,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Cheque shows a different account holder name",
+      "expected": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Beneficiary name in bank does not match business",
+      "expected": "R03",
+      "pred": "R03",
+      "confidence": 0.86,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Penny drop failed, please recheck IFSC",
+      "expected": "R04",
+      "pred": "R04",
+      "confidence": 0.88,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Account number galat hai, test credit fail",
+      "expected": "R04",
+      "pred": "R04",
+      "confidence": 0.51,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Uploaded PDF is password protected",
+      "expected": "R05",
+      "pred": "R05",
+      "confidence": 0.68,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Image is blurry, upload again",
+      "expected": "R05",
+      "pred": "R05",
+      "confidence": 0.97,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Refund policy and contact us page not found on site",
+      "expected": "R06",
+      "pred": "R06",
+      "confidence": 0.93,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Terms and privacy pages absent from app",
+      "expected": "R06",
+      "pred": "R06",
+      "confidence": 0.97,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Website under maintenance, unable to review",
+      "expected": "R07",
+      "pred": "R07",
+      "confidence": 0.86,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Products and prices visible only after login",
+      "expected": "R07",
+      "pred": "R07",
+      "confidence": 0.58,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Utility bill older than 3 months",
+      "expected": "R08",
+      "pred": null,
+      "confidence": 0.3,
+      "human_review": true,
+      "passed": false,
+      "outcome": "wrong: predicted None"
+    },
+    {
+      "text": "Address on rent agreement differs from application",
+      "expected": "R08",
+      "pred": "R08",
+      "confidence": 0.86,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Director DOB does not match ID",
+      "expected": "R09",
+      "pred": "R09",
+      "confidence": 0.86,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Authorised signatory KYC missing",
+      "expected": "R09",
+      "pred": "R09",
+      "confidence": 0.6,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Online betting services not supported",
+      "expected": "R10",
+      "pred": "R10",
+      "confidence": 0.68,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Sells prohibited goods",
+      "expected": "R10",
+      "pred": "R10",
+      "confidence": 0.68,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Website sells electronics but category chosen is apparel",
+      "expected": "R11",
+      "pred": "R11",
+      "confidence": 0.61,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correct but low confidence -> human review"
+    },
+    {
+      "text": "Category mismatch with site content",
+      "expected": "R11",
+      "pred": "R11",
+      "confidence": 0.91,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Name matched a watchlist during screening",
+      "expected": "R12",
+      "pred": "R12",
+      "confidence": 0.86,
+      "human_review": false,
+      "passed": true,
+      "outcome": "correct"
+    },
+    {
+      "text": "Applicant never completed the form",
+      "expected": "R13",
+      "pred": null,
+      "confidence": 0.0,
+      "human_review": true,
+      "passed": false,
+      "outcome": "wrong: predicted None"
+    },
+    {
+      "text": "Please check the details and resubmit",
+      "expected": null,
+      "pred": "R05",
+      "confidence": 0.68,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correctly sent to human review"
+    },
+    {
+      "text": "Documents pending",
+      "expected": null,
+      "pred": null,
+      "confidence": 0.3,
+      "human_review": true,
+      "passed": true,
+      "outcome": "correctly sent to human review"
+    }
+  ],
+  "violations": [],
+  "failures": [
+    {
+      "id": "PARA",
+      "category": "paraphrase",
+      "detail": {
+        "text": "Utility bill older than 3 months",
+        "expected": "R08",
+        "pred": null,
+        "confidence": 0.3,
+        "human_review": true,
+        "passed": false,
+        "outcome": "wrong: predicted None"
+      }
+    },
+    {
+      "id": "PARA",
+      "category": "paraphrase",
+      "detail": {
+        "text": "Applicant never completed the form",
+        "expected": "R13",
+        "pred": null,
+        "confidence": 0.0,
+        "human_review": true,
+        "passed": false,
+        "outcome": "wrong: predicted None"
+      }
+    }
+  ]
+}

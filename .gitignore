@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+state/
+.pytest_cache/
+# Data Pack and brief are not redistributed - place the workbook in the project root or data/ to run
+Buildathon_Student_Data_Pack*.xlsx
+Razorpay_Campus_AI_Buildathon_Student_Brief.pdf
+data/
+.claude/
+.DS_Store

@@ -1,0 +1,70 @@
+{
+  "_note": "Explainable signal lexicon used to map free-text reviewer messages (English + Hinglish) to catalogue codes when rejection_code is blank. Each signal is a case-insensitive regex with a weight; negative weights suppress look-alike codes. Authored by reading the catalogue and the workbook messages - see README for the in-sample caveat.",
+  "R01": [
+    {"label": "mentions PAN", "pattern": "\\bpan\\b", "weight": 0.45},
+    {"label": "mentions name", "pattern": "\\bnaam\\b|\\bname\\b", "weight": 0.25},
+    {"label": "mismatch wording", "pattern": "mismatch|does not match|doesn'?t match|match nahi|different|differs|alag", "weight": 0.25},
+    {"label": "bank/account context (points to R03)", "pattern": "\\bbank\\b|\\baccount\\b|holder", "weight": -0.4},
+    {"label": "GST context (points to R02)", "pattern": "\\bgst", "weight": -0.3},
+    {"label": "signatory/director context (points to R09)", "pattern": "signatory|director", "weight": -0.3}
+  ],
+  "R02": [
+    {"label": "mentions GST/GSTIN", "pattern": "\\bgst(in)?\\b|\\bgst\\s*(number|no|certificate)", "weight": 0.6},
+    {"label": "invalid / inactive / mismatch wording", "pattern": "invalid|inactive|cancel+ed|galat|purana|validated|mismatch|legal name|wrong|expired", "weight": 0.3}
+  ],
+  "R03": [
+    {"label": "mentions bank / account", "pattern": "\\bbank\\b|\\baccount\\b", "weight": 0.35},
+    {"label": "mentions holder name / bank letter", "pattern": "holder|\\bname\\b|\\bnaam\\b|bank letter|cancel+ed cheque", "weight": 0.3},
+    {"label": "mismatch wording", "pattern": "mismatch|does not match|doesn'?t match|match nahi|different|differs|alag", "weight": 0.25},
+    {"label": "IFSC / account-number context (points to R04)", "pattern": "ifsc|account number|penny|test credit|re\\.? ?1\\b", "weight": -0.3}
+  ],
+  "R04": [
+    {"label": "mentions IFSC", "pattern": "ifsc", "weight": 0.5},
+    {"label": "mentions account number", "pattern": "account number|a/c number|account no", "weight": 0.25},
+    {"label": "verification failed wording", "pattern": "verif|test credit|penny|re\\.? ?1\\b|inactive|invalid|failed|nahi hua", "weight": 0.3},
+    {"label": "mentions bank", "pattern": "\\bbank\\b", "weight": 0.15},
+    {"label": "name-mismatch context (points to R03)", "pattern": "\\bname\\b|\\bnaam\\b|holder", "weight": -0.3}
+  ],
+  "R05": [
+    {"label": "unreadable / blurred wording", "pattern": "unreadable|not readable|illegible|blur|cropped|clear nahi|password|resubmit|dobara upload|not clear|cannot read", "weight": 0.6},
+    {"label": "mentions document", "pattern": "\\bdoc(ument)?s?\\b|scan|image|file", "weight": 0.3},
+    {"label": "signatory/address context", "pattern": "signatory|address", "weight": -0.3}
+  ],
+  "R06": [
+    {"label": "mentions policy / T&C / refund / privacy / contact pages", "pattern": "polic|terms|t&c|privacy|refund|contact", "weight": 0.55},
+    {"label": "mentions website / page", "pattern": "website|\\bsite\\b|\\bpages?\\b|\\bapp\\b", "weight": 0.3},
+    {"label": "missing wording", "pattern": "missing|nahi hai|lacks|does not display|not (present|available)|absent", "weight": 0.2},
+    {"label": "category context (points to R10/R11)", "pattern": "category", "weight": -0.4}
+  ],
+  "R07": [
+    {"label": "mentions website / site", "pattern": "website|\\bsite\\b", "weight": 0.3},
+    {"label": "not live / login-wall wording", "pattern": "not live|\\bdown\\b|khul nahi|under construction|maintenance|login|cannot review|not accessible|not opening|not loading", "weight": 0.6},
+    {"label": "policy context (points to R06)", "pattern": "polic|terms|refund|privacy", "weight": -0.4}
+  ],
+  "R08": [
+    {"label": "mentions address", "pattern": "address|pata\\b", "weight": 0.6},
+    {"label": "proof / utility / outdated wording", "pattern": "proof|utility|electricity|rent|outdated|older|old\\b|does not match", "weight": 0.3},
+    {"label": "GST context (points to R02)", "pattern": "\\bgst", "weight": -0.4}
+  ],
+  "R09": [
+    {"label": "mentions signatory / director", "pattern": "signatory|director|authori[sz]ed", "weight": 0.6},
+    {"label": "ID / proof / DOB wording", "pattern": "\\bid\\b|proof|\\bdob\\b|date of birth|identity", "weight": 0.3}
+  ],
+  "R10": [
+    {"label": "restricted / not-supported wording", "pattern": "restricted|prohibited|not supported|support nahi|cannot support|can'?t support|not allowed|gambling|betting|casino", "weight": 0.6},
+    {"label": "mentions category / products", "pattern": "category|products", "weight": 0.25},
+    {"label": "category-mismatch wording (points to R11)", "pattern": "differs|different|website content|selected", "weight": -0.4}
+  ],
+  "R11": [
+    {"label": "mentions category", "pattern": "category", "weight": 0.4},
+    {"label": "differs / mismatch wording", "pattern": "differs|different|mismatch|does not match|alag", "weight": 0.3},
+    {"label": "website content wording", "pattern": "website|content|sells|selling", "weight": 0.25},
+    {"label": "restricted wording (points to R10)", "pattern": "restricted|not supported|support nahi|prohibited", "weight": -0.5}
+  ],
+  "R12": [
+    {"label": "compliance / screening wording", "pattern": "compliance|screening|sanction|watch ?list|negative list|\\baml\\b|\\bpep\\b|screening hit", "weight": 0.9}
+  ],
+  "R13": [
+    {"label": "abandonment wording", "pattern": "abandon|stopped|incomplete|did not complete|not finished|drop(ped)? off", "weight": 0.6}
+  ]
+}

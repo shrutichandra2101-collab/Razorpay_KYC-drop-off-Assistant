@@ -1,0 +1,32 @@
+{
+  "_note": "Decision rules. Fixability comes from the P3_RejectionCatalog 'fixable' column (source of truth). The hard guardrails below are asserted on top and can never be overridden by AI output or by TPV.",
+  "fixable_to_decision": {
+    "Yes": "Recover",
+    "No": "Close",
+    "Needs compliance review": "Route to Compliance"
+  },
+  "hard_guardrails": {
+    "R10": "Close",
+    "R12": "Route to Compliance"
+  },
+  "fixability_label": {
+    "Yes": "Yes",
+    "No": "No",
+    "Needs compliance review": "Compliance review"
+  },
+  "expected_stage_by_code": {
+    "R01": ["KYC docs"],
+    "R02": ["KYC docs"],
+    "R03": ["Bank verification"],
+    "R04": ["Bank verification"],
+    "R05": ["KYC docs", "Business details", "Bank verification"],
+    "R06": ["Website/App review"],
+    "R07": ["Website/App review"],
+    "R08": ["KYC docs"],
+    "R09": ["KYC docs"],
+    "R10": ["Website/App review", "Business details"],
+    "R11": ["Website/App review"],
+    "R12": ["KYC docs", "Business details", "Bank verification", "Website/App review"],
+    "R13": ["Business details", "KYC docs", "Bank verification", "Website/App review"]
+  }
+}
